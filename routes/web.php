@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,11 @@ use App\Http\Controllers\HomeController;
 
 //Home
 Route::get('/', [HomeController::class, 'home']);
+
+//Category
+Route::prefix('category')->group(function () {
+    Route::get('/food-beverage', [CategoryController::class, 'foodBeverage']);
+    Route::get('/beauty-health', [CategoryController::class, 'beautyHealth']);
+    Route::get('/home-care', [CategoryController::class, 'homeCare']);
+    Route::get('/baby-kid', [CategoryController::class, 'babyKid']);
+});
