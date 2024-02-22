@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\SalesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,3 +34,6 @@ Route::prefix('category')->group(function () {
 
 //User
 Route::get('/user/{id}/name/{name}', [UserController::class, 'user']);
+
+//Sales
+Route::get('/sales', [SalesController::class, 'sales']);
